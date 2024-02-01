@@ -12,6 +12,9 @@ RUN apt install -y gnupg && \
     echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-6.0.gpg] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list && \
     apt update && \
     apt-get install -yq mongodb-org
+    
+RUN mkdir -p /data/db
+#run mongod /usr/bin/mongod
 
 # Clone repo
 RUN git clone https://github.com/open5gs/open5gs
